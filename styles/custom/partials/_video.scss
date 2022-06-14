@@ -1,0 +1,163 @@
+.video {
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+  &-gradient {
+      position: absolute;
+      background: url('../../images/video/bgleft.png') left top no-repeat;
+      height: 650px;
+      width: 53%;
+      background-size: 100% 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      @include media-breakpoint-down(lg) {
+          background: url('../../images/video/bgbot.png') bottom no-repeat;
+          background-size: 100%;
+          width: 100%;
+          height: 600px;
+      }
+      @include media-breakpoint-down(md) {
+          display: none;
+      }
+  }
+  &-thumb {
+      position: absolute;
+      background: url('../../images/video/video_thumb.jpg') right top no-repeat;
+      height: 650px;
+      background-size: 100% 100%;
+      top: 0;
+      right: 0;
+      width: 53%;
+      z-index: -2;
+      @include media-breakpoint-down(lg) {
+          width: 100%;
+          height: 100%;
+          background-size: 100%;
+          background-position: bottom;
+      }
+      @include media-breakpoint-down(md) {
+          display: none;
+      }
+  }
+
+  &-details {
+      @include media-breakpoint-down(lg) {
+          padding-top: 8em;
+
+      }
+      @include media-breakpoint-down(md) {
+          padding-top: 4em;
+          padding-bottom: 6em;
+          background: url('../../images/video/bgbot.png') bottom no-repeat;
+          background-size: 100% 100%;
+          width: 100%;
+          transform: translate(0, 4em);
+      }
+      @include media-breakpoint-down(sm) {
+        transform: translate(0, 6em);
+      }
+      ul {
+          li {
+              list-style-image: url('../../images/video/checkmark.png');
+
+              p {
+                  opacity: 0.8;
+              }
+          }
+      }
+  }
+  &-container {
+      height: 650px;
+      @include media-breakpoint-down(md) {
+          height: unset;
+          text-align: center;
+          display: flex;
+          flex-direction: row;
+          align-content: center;
+          justify-content: center;
+          padding: 8em 0;
+          background: url('../../images/video/video_thumb.jpg') right top no-repeat;
+          background-size: 100% 100%;
+      }
+      @include media-breakpoint-down(sm) {
+        padding: 6em 0;
+      }
+      &-play {
+          display: none;
+          @include media-breakpoint-down(md) {
+              display: block;
+              width: 112px;
+              height: 112px;
+              cursor: pointer;
+              background: url('../../images/video/play.png') center center no-repeat;
+              background-size: 100px 100px;
+              transition: 0.3s;
+              transform: translate(0, -135%);
+              &:hover {
+                  background: url('../../images/video/play_hover.png') center center no-repeat;
+                  background-size: 112px 112px;
+                  transition: 0.3s;
+              }
+          }
+          @include media-breakpoint-down(sm) {
+            transform: translate(0, -90%);
+          }
+
+      }
+  }
+  &-play {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      width: 53%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      @include media-breakpoint-down(lg) {
+          width: 100%;
+      }
+      @include media-breakpoint-down(md) {
+          display: none;
+      }
+  }
+  &-cont {
+      width: 228px;
+      height: 228px;
+      cursor: pointer;
+      background: url('../../images/video/play.png') center center no-repeat;
+      background-size: 200px 200px;
+      transition: 0.3s;
+      &:hover {
+          background: url('../../images/video/play_hover.png') center center no-repeat;
+          background-size: 228px 228px;
+          transition: 0.3s;
+      }
+  }
+  &-icon {
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
+    @include media-breakpoint-down(lg) {
+      right: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+    }
+    img {
+      width: 227px;
+    }
+  }
+  h2 {
+      padding-bottom: 1em;
+      @include media-breakpoint-down(lg) {
+          text-align: center;
+
+      }
+  }
+}

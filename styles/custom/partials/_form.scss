@@ -1,0 +1,84 @@
+.form {
+  width: 90%;
+  @include media-breakpoint-down(lg) {
+      width: 100%;
+  }
+  @include media-breakpoint-down(sm) {
+      margin: auto;
+  }
+  #contactus {
+      background: linear-gradient(180deg, #2A7D6C 0%, rgba(62, 105, 96, 0.62) 100%);
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.12);
+      border-radius: 12px;
+      padding: 30px 10px;
+      ul {
+          padding: 0;
+      }
+  }
+  .ui-placeholder {
+      position: relative;
+      display: block;
+      pointer-events: none;
+      input,
+      select,
+      textarea {
+          pointer-events: all;
+      }
+      &:after {
+          content: attr(data-placeholder);
+          position: absolute;
+          top: 50%;
+          transform: translate(0, -50%);
+          left: 10px;
+          transition: 0.25s ease;
+          color: #fff;
+          transform-origin: 0 0;
+      }
+
+      &.focus {
+          &:after {
+              transform: scale(0.8) translateY(-40px);
+          }
+      }
+      &.error {
+          animation: shake 0.3s;
+          &:after {
+              color: #fa595a;
+          }
+          &:before {
+              background-color: #fa595a;
+          }
+      }
+  }
+
+  .ui-input-group {
+      display: block;
+      margin: 15px 0 10px;
+      input,
+      select,
+      textarea {
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.5);
+          border-radius: 2px;
+          width: 100%;
+          min-height: 48px;
+          display: block;
+          color: #ffffff;
+          padding: 5px 10px;
+          outline: none;
+          position: relative;
+          option {
+              color: #000;
+          }
+      }
+      textarea {
+          min-height: 75px;
+          resize: none;
+      }
+  }
+  .ui-formSlide {
+      > li {
+          list-style: none;
+      }
+  }
+}

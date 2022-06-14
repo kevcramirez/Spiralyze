@@ -1,0 +1,106 @@
+$primary: #5BC8AF;
+
+@import "../bootstrap/mixins/breakpoints";
+@import "../bootstrap/mixins/functions";
+@import "../bootstrap/mixins/variables";
+@import "partials/nav";
+@import "partials/slick";
+@import "partials/slider";
+@import "partials/form";
+@import "partials/organize";
+@import "partials/video";
+@import "partials/footer";
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    min-width: 360px;
+    img {
+        width: 100%;
+    }
+
+}
+
+.transparent {
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    &_white {
+        -webkit-text-stroke-color: #fff;
+    }
+    &_black {
+        -webkit-text-stroke-color: #000;
+    }
+}
+.move_hvr {
+    transition: 0.3s;
+    &:hover {
+        transform: translate(0, -0.5em);
+        transition: 0.3s;
+    }
+
+}
+.banner {
+    color: #fff;
+    background: url('../../images/banner/banner_bg.jpg') center center no-repeat;
+    .bannerBG {
+        background: url('../../images/banner/banner_bottom.png') center bottom no-repeat, linear-gradient(180deg, #194D41 0%, rgba(25, 77, 65, 0.7) 100%),;
+        // background-size: 100%;
+    }
+    h2 {
+        font-weight: 700;
+        @include media-breakpoint-up(sm) {
+            font-size: 4rem;
+        }
+        span {
+            display: block;
+        }
+    }
+    .submit {
+        height: 56px;
+        box-sizing: border-box;
+        background: $primary;
+        font-weight: bold;
+        border: unset;
+        i {
+            display: inline-block;
+            padding-right: 0.5em;
+        }
+    }
+}
+
+.about {
+    padding: 80px 0 100px;
+    background: #F5F5F5;
+    .web-col {
+        -webkit-columns: 250px 3;
+    }
+    .row {
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+    .abt-btn {
+        height: 52px;
+        box-sizing: border-box;
+        border: 1px solid $primary;
+        font-weight: bold;
+        color: $primary;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            background: unset;
+        }
+        i {
+            display: inline-block;
+            padding-left: 0.5em;
+        }
+    }
+}
+.pt-6 {
+    padding-top: 4rem !important;
+}
+.pb-8 {
+    padding-bottom: 8rem !important;
+}

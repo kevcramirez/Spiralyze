@@ -1,0 +1,46 @@
+.navbar {
+    .nav-item {
+        .nav-link {
+            color: rgba(255, 255, 255, 0.7);
+            &.active,
+            &:hover {
+                color: rgba(255, 255, 255, 1);
+                font-weight: bold;
+            }
+        }
+    }
+    &-toggler {
+        border: 0;
+        span {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path stroke="rgba(255, 255, 255, 1)" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>');
+        }
+    }
+    &-nav {
+        li {
+            margin-left: 2em;
+            @include media-breakpoint-down(sm) {
+                margin: 0;
+            }
+            &:last-child {
+                min-width: 356px;
+                a.nav-link {
+                    color: rgba(255, 255, 255, 1);
+                }
+                span {
+                    color: $primary;
+                }
+                @include media-breakpoint-down(lg) {
+                    position: absolute;
+                    top: 60%;
+                    right: calc(var(--bs-gutter-x) * .5);
+                }
+                @include media-breakpoint-down(sm) {
+                    position: unset;
+                    min-width: unset;
+                    text-align: center;
+                }
+            }
+
+        }
+    }
+}
